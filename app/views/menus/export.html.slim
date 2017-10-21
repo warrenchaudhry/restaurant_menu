@@ -1,0 +1,31 @@
+h1
+  | Export Menu
+  span.pull-right
+    = link_to 'Back', menus_path, class: 'btn btn-primary'
+  .clearfix
+hr
+= form_tag menus_export_path, method: :get, class: 'form-horizontal'
+  .col-sm-6.col-md-3
+    .form-group
+      = text_field_tag :place, params[:place], class: 'form-control', placeholder: 'Search place here', style: 'width:300px;'
+  .col-sm-6.col-md-3
+    .form-group
+      = text_field_tag :start_date, params[:start_date], class: 'form-control', placeholder: 'Start Date', type: :date
+  .col-sm-6.col-md-3
+    .form-group
+      = date_field_tag :end_date, params[:end_date], class: 'form-control', placeholder: 'End Date'
+  .col-sm-6.col-md-3
+    = submit_tag 'Search', class: 'btn btn-info'
+    = link_to 'Reset', menus_export_path, class: 'btn btn-default'
+.clearfix
+hr
+- if @menus.any?
+  = link_to menus_export_path(place: params[:place], start_date: params[:start_date], end_date: params[:end_date], format: :json), class: 'btn btn-danger pull-right' do
+    = icon('file')
+    span style="margin-left:10px;" Export to JSON
+  .clearfix
+  = render 'table', menus: @menus
+- else
+  p.lead No records found
+
+

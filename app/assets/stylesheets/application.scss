@@ -1,0 +1,26 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+body {
+  padding-top: 60px;
+}
+
+#page-wrapper {
+  padding: 0 15px;
+  background-color: #fff;
+
+  .alert.alert-dismissible {
+    margin-top:10px;
+  }
+}
+
+th.with-sort {
+  i {
+    margin-left:5px;
+    &.unsorted {
+      color:#c3c3c3;
+    }
+  }
+}

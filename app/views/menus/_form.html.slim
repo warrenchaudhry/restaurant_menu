@@ -1,0 +1,30 @@
+.row
+  .col-xs-12
+    = simple_form_for(@menu) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :name
+        = f.input :sponsor
+        = f.input :event
+        = f.input :venue
+        = f.input :place
+        = f.input :physical_description
+        = f.input :occasion
+        = f.input :notes
+        = f.input :call_number
+        = f.input :keywords
+        = f.input :language
+        = f.input :date
+        = f.input :location
+        = f.input :location_type
+        = f.input :currency
+        = f.input :currency_symbol
+        = f.input :status
+        = f.input :page_count
+        = f.input :dish_count
+      br
+      .row-fluid style="margin-bottom: 20px;"
+        span.pull-right
+          = f.button :submit, class: 'btn btn-primary'
+          = link_to 'Cancel', menus_path, class: 'btn btn-default', style: 'margin-left: 5px;'
+        .clearfix

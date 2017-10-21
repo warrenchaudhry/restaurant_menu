@@ -1,0 +1,31 @@
+h1
+  | Menus
+  span.pull-right
+    = link_to 'New Menu', new_menu_path, class: 'btn btn-primary'
+    = link_to 'Export', menus_export_path, class: 'btn btn-success', style: 'margin-left: 10px;'
+.clearfix
+hr
+= form_tag('menus/import/', multipart: true, class: 'form-inline') do
+  .form-group
+    label style="margin-right: 10px;" Import from CSV
+    = file_field_tag :csv_file, class: 'form-control'
+  = submit_tag :import, class: 'btn btn-primary'
+hr
+= form_tag menus_path, method: :get, class: 'form-horizontal'
+  .col-sm-6.col-md-4
+    .form-group
+      = text_field_tag :keyword, params[:keyword], class: 'form-control', placeholder: 'Search here', style: 'width:300px;'
+  .col-sm-6.col-md-4
+    = submit_tag 'Search', class: 'btn btn-info'
+    = link_to 'Reset', menus_path, class: 'btn btn-default'
+.clearfix
+hr
+- if @menus.any?
+  = render 'table', menus: @menus
+- else
+  - if Menu.all.empty?
+    p.lead No records yet
+  - else
+    p.lead No records found
+
+

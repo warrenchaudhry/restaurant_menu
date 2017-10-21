@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  sponsor: MyString
+  event: MyString
+  venue: MyString
+  place: MyString
+  physical_description: MyString
+  occasion: MyString
+  notes: MyString
+  call_number: MyString
+  keywords: MyString
+  language: MyString
+  date: 2017-10-20
+  location: MyString
+  location_type: MyString
+  currency: MyString
+  currency_symbol: MyString
+  status: MyString
+  page_count: 1
+  dish_count: 1
+
+two:
+  name: MyString
+  sponsor: MyString
+  event: MyString
+  venue: MyString
+  place: MyString
+  physical_description: MyString
+  occasion: MyString
+  notes: MyString
+  call_number: MyString
+  keywords: MyString
+  language: MyString
+  date: 2017-10-20
+  location: MyString
+  location_type: MyString
+  currency: MyString
+  currency_symbol: MyString
+  status: MyString
+  page_count: 1
+  dish_count: 1

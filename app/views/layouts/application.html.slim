@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title Restaurant Menu
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    /[if IE]
+      script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"
+  body
+    #page-wrapper.container
+      = flash_messages
+      = yield
+    .clearfix

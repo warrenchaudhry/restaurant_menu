@@ -1,0 +1,28 @@
+table.table.table-striped
+  thead
+    tr
+      th.text-center.with-sort = sortable('ID', :id)
+      th.text-center.with-sort = sortable('Sponsor', :sponsor)
+      th.text-center.with-sort = sortable('Event', :event)
+      th.text-center.with-sort = sortable('Place', :place)
+      th.text-center.with-sort = sortable('Venue', :venue)
+      th.text-center.with-sort = sortable('Location', :location)
+      th.text-center.with-sort = sortable('Date', :date)
+      th colspan="3"
+
+  tbody
+    - menus.each do |menu|
+      tr
+        td = link_to menu.id, menu
+        td = menu.sponsor
+        td = menu.event.present? ? (link_to menu.event, menus_path(event: menu.event)) : 'N/A'
+        td = menu.place
+        td = menu.venue.present? ? (link_to menu.venue, menus_path(venue: menu.venue)) : 'N/A'
+        td = menu.location
+        td = menu.date
+        td = link_to 'Show', menu
+        td = link_to 'Edit', edit_menu_path(menu)
+        td = link_to 'Destroy', menu, data: { confirm: 'Are you sure?' }, method: :delete
+
+hr
+= paginate menus, theme: 'twitter-bootstrap-3'

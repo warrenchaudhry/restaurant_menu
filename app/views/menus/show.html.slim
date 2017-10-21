@@ -1,0 +1,16 @@
+.row
+  .col-lg-12
+    .panel.panel-primary
+      .panel-heading
+        | Menu Details
+      .panel-body
+        table.table
+          tbody
+            - @menu.attributes.each do |key, value|
+              tr
+                td: strong = attr_label(key)
+                td = value
+            tr
+              td colspan=2 class="text-right"
+                = link_to 'Edit', edit_menu_path(@menu), class: 'btn btn-info', style: 'margin-right: 5px;'
+                = link_to 'Back', menus_path, class: 'btn btn-default'
